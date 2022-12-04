@@ -5,11 +5,7 @@ import { MessagesRepository } from './messages.repository';
 
 @Injectable()
 export class MessagesService {
-  messagesRepository: MessagesRepository;
-
-  constructor() {
-    this.messagesRepository = new MessagesRepository();
-  }
+  constructor(private readonly messagesRepository: MessagesRepository) {}
 
   create(createMessageDto: CreateMessageDto) {
     return this.messagesRepository.create(createMessageDto.text);

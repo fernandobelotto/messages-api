@@ -1,7 +1,8 @@
-import { Message } from './entities/message.entity';
+import { Injectable } from '@nestjs/common';
 import { v4 as uuid } from 'uuid';
-import { NotFoundException } from '@nestjs/common';
+import { Message } from './entities/message.entity';
 
+@Injectable()
 export class MessagesRepository {
   private messages: Message[] = [];
 
